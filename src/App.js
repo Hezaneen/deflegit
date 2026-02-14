@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import veeGif from "./assets/vee.gif";
 import "./App.css";
 
 function App() {
@@ -112,11 +113,7 @@ function App() {
           )}
 
           <div className="gif-circle">
-  <img
-  src={process.env.PUBLIC_URL + "/vee.gif"}
-  alt="Valentine"
-  className="gif"
-/>
+  <img src={veeGif} alt="Valentine" className="gif" />
 </div>
 
           <h1 className="valentine">💘 HAPPY VALENTINE'S DAY CENCH 💘</h1>
