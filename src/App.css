@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  font-family: monospace;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  transition: background 0.1s;
+  color: red;
+  position: relative;
+}
+
+/* START SCREEN */
+.start {
+  background: black;
+  color: red;
+}
+
+.warning {
+  font-size: 40px;
+  animation: flicker 0.2s infinite;
+}
+
+.start-btn {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 18px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  animation: pulse 1s infinite;
+}
+
+/* FLASHING RED BACKGROUND */
+.scan,
+.countdown,
+.glitch {
+  animation: flashRed 0.3s infinite;
+}
+
+@keyframes flashRed {
+  0% { background: black; }
+  50% { background: #400000; }
+  100% { background: black; }
+}
+
+/* GLITCH EFFECT */
+.glitch {
+  animation: flashRed 0.2s infinite, shake 0.1s infinite;
+}
+
+.glitch-text {
+  font-size: 35px;
+  animation: flicker 0.1s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(3px, 3px); }
+  25% { transform: translate(-3px, 3px); }
+  50% { transform: translate(-3px, -3px); }
+  75% { transform: translate(3px, -3px); }
+  100% { transform: translate(3px, 3px); }
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* SECURITY POPUP */
+.security-popup {
+  position: absolute;
+  top: 15%;
+  background: black;
+  color: red;
+  border: 2px solid red;
+  padding: 20px 30px;
+  box-shadow: 0 0 20px red;
+  animation: popupGlitch 0.1s infinite;
+  z-index: 10;
+}
+
+@keyframes popupGlitch {
+  0% { transform: translate(2px, 2px); }
+  50% { transform: translate(-2px, -2px); }
+  100% { transform: translate(2px, 2px); }
+}
+
+/* REVEAL */
+.reveal {
+  background: linear-gradient(45deg, #f775a9, #fe017f);
+  color: white;
+  animation: none;
+}
+
+.floating-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -50px;
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* GIF CIRCLE */
+.gif-circle {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 30px;
+  border: 5px solid white;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+  animation: popIn 1.5s ease forwards;
+}
+
+.gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* TEXT STYLING */
+.valentine {
+  font-size: 50px;
+  animation: fadeIn 2s ease forwards;
+}
+
+.message {
+  font-size: 22px;
+  margin-top: 20px;
+  animation: fadeIn 3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
