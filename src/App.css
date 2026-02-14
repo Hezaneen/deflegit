@@ -140,8 +140,8 @@ body {
 
 /* GIF CIRCLE */
 .gif-circle {
-  width: 260px;
-  height: 260px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 30px;
@@ -151,9 +151,9 @@ body {
 }
 
 .gif {
-  width: 220px;
-  height: 220px;
-  object-fit: contain;
+  width: 180px;
+  height: 180px;
+  object-fit: fill;
   border-radius: 50%;
 }
 
